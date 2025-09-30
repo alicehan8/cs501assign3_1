@@ -45,16 +45,22 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun RowColSplitLayout(modifier: Modifier = Modifier){
     Row(modifier = modifier.height(400.dp).fillMaxSize()){
+        //create a box that is 1:4 proportion of screen (25%)
         Box(modifier = Modifier.weight(1f, true).fillMaxHeight().background(Color.Red)){
             Text("25% Width")
         }
+        //create column that is 3:4 proportion of screen (75%)
+        //want it to be column so we can split into small subsections
         Column(modifier = Modifier.weight(3f, true).fillMaxHeight()){
+            // 2:3:5 proportion of column (2 section)
             Box(modifier = Modifier.weight(2f, true).fillMaxWidth().background(Color.Blue)){
                 Text("20% height, 75% width")
             }
+            // 2:3:5 proportion of column (3 section)
             Box(modifier = Modifier.weight(3f, true).fillMaxWidth().background(Color.Green)){
                 Text("30% height, 75% width")
             }
+            // 2:3:5 proportion of column (5 section)
             Box(modifier = Modifier.weight(5f, true).fillMaxWidth().background(Color.Black)){
                 Text("50% height, 75% width", color=Color.White)
             }
